@@ -8,6 +8,75 @@
     <title>¡Calcula tu área!</title>
   </head>
   <body>
+    <header><h1>¡Calcula tu área!</h1></header>
+    <main>
+      <form>
+        <fieldset>
+          <label for="squareSide">¿Cuánto mide cada lado de tu cuadrado?</label>
+          <input id="squareSide" type="number" />
+          <button type="button" onclick="calculateSquarePerimeter()">
+            Calcula el perímetro
+          </button>
+          <button type="button" onclick="calculateSquareArea()">
+            Calcular el área
+          </button>
+          <input type="number" id="squareMessage" readonly />
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <label for="triangleSideA">Escribe cuanto mide el primer lado:</label>
+          <input id="triangleSideA" type="number" />
+          <label for="triangleSideB"
+            >Escribe cuanto mide el segundo lado:</label
+          >
+          <input id="triangleSideB" type="number" />
+          <label for="triangleBase">Escribe cuanto mide la base:</label>
+          <input id="triangleBase" type="number" />
+          <label for="triangleHeight">Escribe cuanto mide la altura:</label>
+          <input id="triangleHeight" type="number" />
+          <button type="button" onclick="calculateTrianglePerimeter()">
+            Calcular el perímetro
+          </button>
+          <button type="button" onclick="calculateTriangleArea()">
+            Calcular el área
+          </button>
+          <input type="number" id="triangleMessage" readonly />
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <label for="triangleHeightSideA"
+            >Escribe cuanto mide el primer lado:</label
+          >
+          <input id="triangleHeightSideA" type="number" />
+          <label for="triangleHeightSideB"
+            >Escribe cuanto mide el segundo lado:</label
+          >
+          <input id="triangleHeightSideB" type="number"  />
+          <label for="triangleHeightBase">Escribe cuanto mide la base:</label>
+          <input id="triangleHeightBase" type="number" />
+          <button type="button" onclick="calculateTriangleHeight()">
+            Calcular la altura
+          </button>
+          <input type="number" id="triangleHeightMessage" readonly>
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <label for="circleRadio">Escribe cuanto mide el radio:</label>
+          <input id="circleRadio" type="number" />
+          <button type="button" onclick="calculateCirclePerimeter()">
+            Calcular el perímetro
+          </button>
+          <button type="button" onclick="calculateCircleArea()">
+            Calcular el área
+          </button>
+          <input type="number" id="circleMessage" readonly></p>
+        </fieldset>
+      </form>
+    </main>
+    <footer></footer>
     <script src="./js/main.js"></script>
   </body>
 </html>
