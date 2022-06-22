@@ -98,12 +98,11 @@ function calculateTriangleHeight() {
 }
 
 //Circle
+const pi = Math.PI;
 
 function circleDiameter(radio) {
   return radio * 2;
 }
-
-const pi = Math.PI;
 
 function circlePerimeter(radio) {
   const diameter = circleDiameter(radio);

@@ -4,83 +4,186 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>¡Calcula tu área!</title>
+    <title>¡Calcula tu Área!</title>
   </head>
   <body>
-    <header><h1>¡Calcula tu área!</h1></header>
-    <main>
-      <form>
-        <fieldset>
-          <label for="squareSide">¿Cuánto mide cada lado de tu cuadrado?</label>
-          <input id="squareSide" type="number" />
-          <button type="button" onclick="calculateSquarePerimeter()">
-            Calcula el perímetro
-          </button>
-          <button type="button" onclick="calculateSquareArea()">
-            Calcular el área
-          </button>
-          <label for="squareMessage">El resultado es:</label>
-          <input type="number" id="squareMessage" value="" readonly />
-        </fieldset>
-      </form>
-      <form>
-        <fieldset>
-          <label for="triangleSideA">Escribe cuanto mide el primer lado:</label>
-          <input id="triangleSideA" type="number" />
-          <label for="triangleSideB"
-            >Escribe cuanto mide el segundo lado:</label
+    <header class="header"><h1>¡Calcula tu Área!</h1></header>
+    <main class="main">
+      <section class="main_section">
+        <div class="img_title_container">
+          <img class="img" src="./img/square.png" alt="Square" />
+          <h3 class="section_titles">Cuadrado</h3>
+        </div>
+        <form class="form_section">
+          <label for="squareSide" class="label"
+            >¿Cuánto mide cada lado de tu cuadrado?</label
           >
-          <input id="triangleSideB" type="number" />
-          <label for="triangleBase">Escribe cuanto mide la base:</label>
-          <input id="triangleBase" type="number" />
-          <label for="triangleHeight">Escribe cuanto mide la altura:</label>
-          <input id="triangleHeight" type="number" />
-          <button type="button" onclick="calculateTrianglePerimeter()">
-            Calcular el perímetro
+          <input class="input" id="squareSide" type="number" />
+          <button
+            class="button"
+            type="button"
+            onclick="calculateSquarePerimeter()"
+          >
+            Perímetro
           </button>
-          <button type="button" onclick="calculateTriangleArea()">
-            Calcular el área
+          <button class="button" type="button" onclick="calculateSquareArea()">
+            Área
           </button>
-          <label for="triangleMessage">El resultado es:</label>
-          <input type="number" id="triangleMessage" readonly />
-        </fieldset>
-      </form>
-      <form>
-        <fieldset>
-          <label for="triangleHeightSideA"
+          <label for="squareMessage" class="label">El resultado es:</label>
+          <input
+            class="input"
+            type="number"
+            id="squareMessage"
+            value=""
+            readonly
+          />
+        </form>
+      </section>
+      <section class="main_section">
+        <div class="img_title_container">
+          <img class="img" src="./img/circle.png" alt="Circle" />
+          <h3 class="section_titles">Círculo</h3>
+        </div>
+        <form class="form_section">
+          <label for="circleRadio" class="label"
+            >Escribe cuanto mide el radio:</label
+          >
+          <input class="input" id="circleRadio" type="number" />
+          <button
+            class="button"
+            type="button"
+            onclick="calculateCirclePerimeter()"
+          >
+            Perímetro
+          </button>
+          <button class="button" type="button" onclick="calculateCircleArea()">
+            Área
+          </button>
+          <label for="circleMessage" class="label">El resultado es:</label>
+          <input class="input" type="number" id="circleMessage" readonly />
+        </form>
+      </section>
+      <section class="main_section">
+        <div class="img_title_container">
+          <img class="img" src="./img/triangle.png" alt="Triangle" />
+          <h3 class="section_titles">Triángulo</h3>
+        </div>
+        <form class="form_section">
+          <label for="triangleSideA" class="label"
             >Escribe cuanto mide el primer lado:</label
           >
-          <input id="triangleHeightSideA" type="number" />
-          <label for="triangleHeightSideB"
+          <input class="input" id="triangleSideA" type="number" />
+          <label for="triangleSideB" class="label"
             >Escribe cuanto mide el segundo lado:</label
           >
-          <input id="triangleHeightSideB" type="number"  />
-          <label for="triangleHeightBase">Escribe cuanto mide la base:</label>
-          <input id="triangleHeightBase" type="number" />
-          <button type="button" onclick="calculateTriangleHeight()">
-            Calcular la altura
+          <input class="input" id="triangleSideB" type="number" />
+          <label for="triangleBase" class="label"
+            >Escribe cuanto mide la base:</label
+          >
+          <input class="input" id="triangleBase" type="number" />
+          <label for="triangleHeight" class="label"
+            >Escribe cuanto mide la altura:</label
+          >
+          <input class="input" id="triangleHeight" type="number" />
+          <button
+            class="button"
+            type="button"
+            onclick="calculateTrianglePerimeter()"
+          >
+            Perímetro
           </button>
-          <label for="triangleHeightMessage">El resultado es:</label>
-          <input type="number" id="triangleHeightMessage" readonly>
-        </fieldset>
-      </form>
-      <form>
-        <fieldset>
-          <label for="circleRadio">Escribe cuanto mide el radio:</label>
-          <input id="circleRadio" type="number" />
-          <button type="button" onclick="calculateCirclePerimeter()">
-            Calcular el perímetro
+          <button
+            class="button"
+            type="button"
+            onclick="calculateTriangleArea()"
+          >
+            Área
           </button>
-          <button type="button" onclick="calculateCircleArea()">
-            Calcular el área
+          <label for="triangleMessage" class="label">El resultado es:</label>
+          <input class="input" type="number" id="triangleMessage" readonly />
+        </form>
+      </section>
+      <section class="main_section">
+        <div class="img_title_container">
+          <img
+            class="img"
+            src="./img/height.png"
+            alt="Isosceles triangle height"
+          />
+          <h3 class="section_titles">Altura de un triángulo isósceles</h3>
+        </div>
+        <form class="form_section">
+          <label for="triangleHeightSideA" class="label"
+            >Escribe cuanto mide el primer lado:</label
+          >
+          <input class="input" id="triangleHeightSideA" type="number" />
+          <label for="triangleHeightSideB" class="label"
+            >Escribe cuanto mide el segundo lado:</label
+          >
+          <input class="input" id="triangleHeightSideB" type="number" />
+          <label for="triangleHeightBase" class="label"
+            >Escribe cuanto mide la base:</label
+          >
+          <input class="input" id="triangleHeightBase" type="number" />
+          <button
+            class="button"
+            type="button"
+            onclick="calculateTriangleHeight()"
+          >
+            Altura
           </button>
-          <label for="circleMessage">El resultado es:</label>
-          <input type="number" id="circleMessage" readonly></p>
-        </fieldset>
-      </form>
+          <label for="triangleHeightMessage" class="label"
+            >El resultado es:</label
+          >
+          <input
+            class="input"
+            type="number"
+            id="triangleHeightMessage"
+            readonly
+          />
+        </form>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <p>© 2022 Carlota Blanco Aylagas</p>
+      <nav>
+        <ul class="rrss">
+          <li class="rrss_item">
+            <a
+              class="rrss_item_link"
+              href="https://www.linkedin.com/in/carlotablancoaylagas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li class="rrss_item">
+            <a
+              class="rrss_item_link"
+              href="https://github.com/CarlotaBlanco"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html>
