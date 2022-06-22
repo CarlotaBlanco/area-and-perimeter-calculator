@@ -10,6 +10,8 @@ const triangleHeightMessage = document.getElementById('triangleHeightMessage');
 const triangleHeightSideA = document.getElementById('triangleHeightSideA');
 const triangleHeightSideB = document.getElementById('triangleHeightSideB');
 const triangleHeightBase = document.getElementById('triangleHeightBase');
+const circleRadio = document.getElementById('circleRadio');
+const circleMessage = document.getElementById('circleMessage');
 
 //Square functions
 function squarePerimeter(side) {
@@ -90,6 +92,44 @@ function calculateTriangleHeight() {
     } else {
       alert('Error, el triángulo no es isósceles');
     }
+  } else {
+    alert('¡Tu medida es errónea!');
+  }
+}
+
+//Circle
+
+function circleDiameter(radio) {
+  return radio * 2;
+}
+
+const pi = Math.PI;
+
+function circlePerimeter(radio) {
+  const diameter = circleDiameter(radio);
+  const perimeter = diameter * pi;
+  return perimeter.toFixed(2);
+}
+
+function circleArea(radio) {
+  const area = radio * radio * pi;
+  return area.toFixed(2);
+}
+function calculateCirclePerimeter() {
+  const value = Number(circleRadio.value);
+  if (value > 0) {
+    const result = circlePerimeter(value);
+    renderResults(result, circleMessage);
+  } else {
+    alert('¡Tu medida es errónea!');
+  }
+}
+
+function calculateCircleArea() {
+  const value = Number(circleRadio.value);
+  if (value > 0) {
+    const result = circleArea(value);
+    renderResults(result, circleMessage);
   } else {
     alert('¡Tu medida es errónea!');
   }
