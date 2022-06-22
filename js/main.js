@@ -6,6 +6,10 @@ const triangleSideA = document.getElementById('triangleSideA');
 const triangleSideB = document.getElementById('triangleSideB');
 const triangleBase = document.getElementById('triangleBase');
 const triangleHeight = document.getElementById('triangleHeight');
+const triangleHeightMessage = document.getElementById('triangleHeightMessage');
+const triangleHeightSideA = document.getElementById('triangleHeightSideA');
+const triangleHeightSideB = document.getElementById('triangleHeightSideB');
+const triangleHeightBase = document.getElementById('triangleHeightBase');
 
 //Square functions
 function squarePerimeter(side) {
@@ -62,6 +66,30 @@ function calculateTriangleArea() {
   if (base > 0 && height > 0) {
     const result = triangleArea(base, height);
     renderResults(result, triangleMessage);
+  } else {
+    alert('¡Tu medida es errónea!');
+  }
+}
+
+//Isosceles tiangle height
+function heightTriangleIsosceles(sideA, base) {
+  const sideASquared = sideA * sideA;
+  const baseSquared = base * base;
+  const height = Math.sqrt(sideASquared - baseSquared / 4);
+  return height.toFixed(2);
+}
+
+function calculateTriangleHeight() {
+  const sideA = Number(triangleHeightSideA.value);
+  const sideB = Number(triangleHeightSideB.value);
+  const base = Number(triangleHeightBase.value);
+  if (base > 0 && sideA > 0 && sideB > 0) {
+    if (sideA === sideB && sideA !== base) {
+      const result = heightTriangleIsosceles(sideA, base);
+      renderResults(result, triangleHeightMessage);
+    } else {
+      alert('Error, el triángulo no es isósceles');
+    }
   } else {
     alert('¡Tu medida es errónea!');
   }
